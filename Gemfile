@@ -29,6 +29,7 @@ gem 'omniauth'
 # and rake tasks are available in development mode:
 group :development, :test do
   gem 'nokogiri', '1.4.6'
+  gem "spork"
   gem 'cucumber-rails', '>= 1.0.0'
   gem 'capybara'
   gem 'rspec-rails'

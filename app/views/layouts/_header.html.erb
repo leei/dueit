@@ -1,0 +1,29 @@
+<div id="header" class="span-24 last">
+  <div class="span-24 last">
+    <div class="banner span-14">
+      <span class="name">DueIt</span>
+      Manage your homework
+    </div>
+
+    <div class="account span-10 last">
+      <% if account_signed_in? %>
+        <div class="left">
+          Welcome <%= current_account.display_name %>
+        </div>
+        <div class="right">
+          <div><%= link_to("Sign Off", destroy_account_session_path, :method => 'delete') %></div>
+        </div>
+      <% else %>
+        <div class="left">
+         <em>Sign in or create an account.</em>
+       </div>
+       <div class="right">
+          <div><%= link_to("Sign In", new_account_session_path)  %></div>
+          <div><%= link_to("Register", new_account_registration_path)  %></div>
+        </div>
+     <% end %>
+      <div class="clear"></div>
+    </div>
+  </div>
+
+</div>

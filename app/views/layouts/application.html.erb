@@ -2,17 +2,38 @@
 <html>
 <head>
   <title>Dueit</title>
-  <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag :defaults %>
-  <%= csrf_meta_tag %>
+  <%= stylesheet_link_tag "screen.css", :media => "screen, projection" %>
+  <%= stylesheet_link_tag "print.css", :media => "print" %>
+  <!--[if lt IE 8]>
+  <%= stylesheet_link_tag "ie.css", :media => "screen, projection" %>
+  <![endif]-->
+
+ <%= stylesheet_link_tag "cupertino/jquery-ui-1.8.14.custom.css" %>
+ <%= stylesheet_link_tag "dueit.css" %>
+ <%= csrf_meta_tag %>
 </head>
 <body>
-<div id="flash">
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-</div>
+  <div class="wrapper">
+    <div class="container">
+      <div class="span-24 last">
+        <%= render :partial => "/layouts/header" %>
+      </div>
 
-<%= yield %>
+      <div id="alerts" class="span-24 last">
+        <% if notice %><div class="notice"><%= notice %></div> <% end %>
+        <% if alert %>  <div class="alert"><%= alert %></div> <% end %>
+      </div>
 
+      <div class="content span-24 last">
+        <%= yield %>
+      </div>
+    </div>
+
+    <div class="push"></div>
+  </div>
+
+  <%= render :partial => "/layouts/footer" %>
+
+  <%= javascript_include_tag :defaults, "jquery-ui.js" %>
 </body>
 </html>

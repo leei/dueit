@@ -1,0 +1,76 @@
+html, body {
+   height: 100%;
+   padding: 0; margin: 0;
+}
+
+body {
+   background-color: #884444;
+}
+
+.wrapper {
+   min-height: 100%;
+   height: auto !important;
+   height: 100%;
+   margin: 0 auto -24px;
+}
+
+.container {
+   background-color: #ffffff;
+   xmargin: 6px auto 2px auto;
+   border-radius: 12px;
+   -moz-border-radius: 12px;
+}
+
+.content {
+   padding: 2pt 4pt;
+}
+
+#footer, .push {
+   height: 24px;
+}
+
+#footer {
+   padding: 0 8pt;
+   xmargin: 6px auto 2px auto;
+   background-color: #eee;
+}
+
+#footer a {
+   text-decoration: none;
+   padding: 0 4pt;
+}
+
+#alerts {
+   height: 32px;
+}
+
+.error, .alert, .notice, .success, .info {
+   padding: 2px 8px;
+   margin-bottom: 4px;
+}
+
+#header {
+   background-color: #884444;
+}
+
+#header .banner {
+   color: #ffffff;
+   font-size: 12pt;
+}
+#header .banner .name {
+   font-size: 24pt;
+   margin-right: 12pt;
+}
+
+#header .account {
+   font-size: 10pt;
+   background-color: #ffcccc;
+   border-radius: 4px;
+   -moz-border-radius: 4px;
+}
+#header .account >div {
+   padding: 0 4pt;
+}
+#header .account a {
+   text-decoration: none;
+}
