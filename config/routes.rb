@@ -1,4 +1,6 @@
 Dueit::Application.routes.draw do
+  resources :homeworks
+
   devise_for :accounts
 
   # The priority is based upon order of creation:

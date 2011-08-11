@@ -38,6 +38,9 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'autotest'
 
+  gem "machinist", ">= 1.0.0"
+  gem "faker", ">= 0.9.0"
+
   gem 'ruby-debug19', :require => 'ruby-debug'
 end
 

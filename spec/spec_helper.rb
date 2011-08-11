@@ -7,6 +7,8 @@ require 'rspec/rails'
 # in spec/support/ and its subdirectories.
 Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
+require File.expand_path(File.dirname(__FILE__) + "/blueprints")
+
 RSpec.configure do |config|
   # == Mock Framework
   #
@@ -24,4 +26,12 @@ RSpec.configure do |config|
   # examples within a transaction, remove the following line or assign false
   # instead of true.
   config.use_transactional_fixtures = true
+
+  # reset Sham generators
+  config.before(:all)    { Sham.reset(:before_all)  }
+  config.before(:each)   { Sham.reset(:before_each) }
+
+  # Setup for Devise/OmniAuth integration
+  OmniAuth.config.test_mode = true
+
 end
