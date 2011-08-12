@@ -1,5 +1,5 @@
 Dueit::Application.routes.draw do
-  resources :homeworks
+  resources :homework
 
   devise_for :accounts
 
