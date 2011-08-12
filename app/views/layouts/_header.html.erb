@@ -8,7 +8,7 @@
     <div class="account span-10 last">
       <% if account_signed_in? %>
         <div class="left">
-          Welcome <%= current_account.display_name %>
+          Signed in as <%= current_account.display_name %>
         </div>
         <div class="right">
           <div><%= link_to("Sign Off", destroy_account_session_path, :method => 'delete') %></div>

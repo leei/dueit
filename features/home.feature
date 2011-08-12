@@ -7,3 +7,7 @@ Feature: Home Page
     Given I am on the home page
     Then I should see "Sign In"
     And I follow "Sign In"
+
+  Scenario: See info on home page if not signed in
+    Given I am not signed in
+    When I go to the home page
