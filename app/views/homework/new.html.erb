@@ -1,0 +1,9 @@
+<%= form_for @homework do |f| %>
+  <%= f.label :name, 'Name' %>:
+  <%= f.text_field :name %><br />
+  <%= f.label :criteria, 'Criteria' %>:
+  <%= f.text_field :criteria %><br />
+  <%= f.label :deadline, 'Due Date' %>:
+  <%= f.text_field :deadline %><br />
+  <%= f.submit %>
+<% end %>

@@ -4,18 +4,18 @@ def make_homework(n, owner)
   homework.each {|h| h.should be_valid }
 end
 
-When /^(?:|I )create (\d+) pieces of homework$/ do |arg1|
+When /^(?:|I )create (\d+) piece(?:|s) of homework$/ do |arg1|
   n = arg1.to_i
   make_homework(n, @current_account)
 end
 
-When /^(?:|I )create (\d+) pieces of homework by \"([^\"]*)\"$/ do |arg1, arg2|
+When /^(?:|I )create (\d+) piece(?:|s) of homework by \"([^\"]*)\"$/ do |arg1, arg2|
   n = arg1.to_i
   owner = Account.make(:email => arg2)
   make_homework(n, owner)
 end
 
-Then /^(?:|I )should see (\d+) pieces of homework$/ do |arg1|
+Then /^(?:|I )should see (\d+) piece(?:|s) of homework$/ do |arg1|
   #save_and_open_page
   n = arg1.to_i
   within('.content') do
