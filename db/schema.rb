@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110811172553) do
+ActiveRecord::Schema.define(:version => 20110818163625) do
 
   create_table "accounts", :force => true do |t|
     t.string   "email",                                 :default => "", :null => false
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(:version => 20110811172553) do
   add_index "accounts", ["email"], :name => "index_accounts_on_email", :unique => true
   add_index "accounts", ["reset_password_token"], :name => "index_accounts_on_reset_password_token", :unique => true
 
-  create_table "homeworks", :force => true do |t|
+  create_table "homework", :force => true do |t|
     t.string   "name"
     t.text     "criteria"
     t.datetime "deadline"
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(:version => 20110811172553) do
     t.datetime "updated_at"
   end
 
-  add_index "homeworks", ["deadline"], :name => "index_homeworks_on_deadline"
-  add_index "homeworks", ["owner_id"], :name => "index_homeworks_on_owner_id"
+  add_index "homework", ["deadline"], :name => "index_homeworks_on_deadline"
+  add_index "homework", ["owner_id"], :name => "index_homeworks_on_owner_id"
 
 end
