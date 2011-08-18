@@ -13,6 +13,7 @@ Given /^I am not signed in$/ do
   within("#header") do
     if page.has_content?("Sign off")
       click_link("Sign off")
+      @current_account = nil
     end
   end
 end
@@ -24,6 +25,7 @@ When /^I sign in as \"([^\"]*)\"$/ do |arg1|
     And I fill in "account_password" with "#{arg1}"
     And I press "Sign in"
   }
+  @current_account = Account.find_by_email(arg1)
 end
 
 When /^I sign off$/ do
@@ -32,6 +34,7 @@ When /^I sign off$/ do
     Then I should see "Sign off" within "#header"
     When I follow "Sign off" within "#header"
   }
+  @current_account = nil
 end
 
 Then /^I should be signed in$/ do

@@ -5,6 +5,12 @@
   To begin, click <%= link_to "Add New Homework", new_homework_path %> to
   remember some homework.
 </p>
+<div id="homework_list">
+  <ul>
+    <%= render :partial => "homework/homework", :collection => @homework %>
+  </ul>
+</div>
 <% else %>
-<p>To use DueIt, you must Sign In or Register an account.</p>
+<p>To use DueIt, you must <%= link_to "Sign In", new_account_session_path %>
+  or <%= link_to "Register", new_account_registration_path %> an account.</p>
 <% end %>

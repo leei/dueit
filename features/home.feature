@@ -11,10 +11,16 @@ Feature: Home Page
   Scenario: See instructions on home page if not signed in
     Given I am not signed in
     When I go to the home page
-    Then I should see "To use DueIt, you must Sign In or Register an account."
+    Then I should see "To use DueIt, you must"
 
   Scenario: Be allowed to create homework if signed in
     Given I am signed in
     When I go to the home page
     Then I should see "Add New Homework"
      And I follow "Add New Homework"
+
+  Scenario: See a list of my own homework
+    Given I am signed in
+    When I create 5 pieces of homework
+     And I go to the home page
+    Then I should see 5 pieces of homework
