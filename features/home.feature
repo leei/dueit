@@ -24,3 +24,9 @@ Feature: Home Page
     When I create 5 pieces of homework
      And I go to the home page
     Then I should see 5 pieces of homework
+
+  Scenario: Don't show other account's homework on home page
+    Given I am signed in
+    When I create 5 pieces of homework by "other@gmail.com"
+     And I go to the home page
+    Then I should see 0 pieces of homework
