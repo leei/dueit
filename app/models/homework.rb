@@ -3,4 +3,6 @@ class Homework < ActiveRecord::Base
 
   validates :owner, :presence => true
   validates :name, :length => 3..140
+
+  validates :deadline, :presence => true
 end

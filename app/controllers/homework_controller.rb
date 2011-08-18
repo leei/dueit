@@ -7,6 +7,14 @@ class HomeworkController < ApplicationController
 
   def create
     @homework = Homework.create params[:homework].merge(:owner => current_account)
-    redirect_to root_path
+    if @homework.valid?
+      # Success...
+      flash.notice = "Homework '#{@homework.name}' created"
+      redirect_to root_path
+    else
+      # Failure..
+      flash.alert = "Failed: #{@homework.errors.full_messages.join(', ')}"
+      render :action => "new"
+    end
   end
 end

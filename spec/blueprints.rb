@@ -23,4 +23,5 @@ Homework.blueprint do
   name { Sham.name }
   criteria { Sham.text }
   owner { Account.make }
+  deadline { DateTime.now }
 end
