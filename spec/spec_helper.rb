@@ -30,8 +30,4 @@ RSpec.configure do |config|
   # reset Sham generators
   config.before(:all)    { Sham.reset(:before_all)  }
   config.before(:each)   { Sham.reset(:before_each) }
-
-  # Setup for Devise/OmniAuth integration
-  OmniAuth.config.test_mode = true
-
 end

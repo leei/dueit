@@ -23,6 +23,18 @@ module HtmlSelectorsHelpers
     #  when /the header/
     #    [:xpath, "//header"]
 
+    when "the header"
+      "#header"
+
+    when "the alerts"
+      "#alerts"
+
+    when "the first homework"
+      ".homework:first"
+
+    when "the list of homework"
+      ".homework"
+
     # This allows you to provide a quoted selector as the scope
     # for "within" steps as was previously the default for the
     # web steps:

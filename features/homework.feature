@@ -13,7 +13,7 @@ Feature: Manage Homework
      And I press "Create Homework"
     Then I should be on the home page
      And I should see 1 piece of homework
-     And I should see "New Homework" within ".homework"
+     And I should see "New Homework" within the list of homework
 
   Scenario: I can't create homework without a due date
     Given I am signed in
@@ -22,6 +22,16 @@ Feature: Manage Homework
      | Name     | New Homework                    |
      | Criteria | Some criteria for this homework |
      And I press "Create Homework"
-    Then I should see "Failed" within "#alerts .alert"
+    Then I should see "Failed" within the alerts
      And the "Name" field should contain "New Homework"
      And the "Criteria" field should contain "Some criteria for this homework"
+
+  @javascript
+  Scenario: I can destroy a homework that I created
+    Given I am signed in
+      And I have 2 pieces of homework
+    When I go to the home page
+    Then I should see 2 pieces of homework
+    When I follow "Delete" within the first homework
+    Then I should be on the home page
+     And I should see 1 piece of homework

@@ -1,4 +1,4 @@
 <li class="homework">
-  <h3> <%= homework.name %> </h3>
-  <p><%= homework.criteria %> </p>
+  <%= render :partial => "homework/header", :object => homework %>
+ <p><%= homework.criteria %> </p>
 </li>

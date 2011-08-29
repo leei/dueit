@@ -4,6 +4,10 @@ def make_homework(n, owner)
   homework.each {|h| h.should be_valid }
 end
 
+Given /^I have (\d+) pieces of homework$/ do |arg1|
+  When "I create #{arg1} pieces of homework"
+end
+
 When /^(?:|I )create (\d+) piece(?:|s) of homework$/ do |arg1|
   n = arg1.to_i
   make_homework(n, @current_account)
