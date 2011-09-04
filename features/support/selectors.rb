@@ -35,6 +35,9 @@ module HtmlSelectorsHelpers
     when "the list of homework"
       ".homework"
 
+    when "the homework headers"
+      ".homework-head"
+
     # This allows you to provide a quoted selector as the scope
     # for "within" steps as was previously the default for the
     # web steps:

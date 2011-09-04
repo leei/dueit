@@ -1,5 +1,5 @@
-def make_homework(n, owner)
-  homework = (1..n).map{Homework.make(:owner => owner)}
+def make_homework(n, attrs)
+  homework = (1..n).map{Homework.make(attrs)}
   homework.length.should == n
   homework.each {|h| h.should be_valid }
 end
@@ -10,13 +10,18 @@ end
 
 When /^(?:|I )create (\d+) piece(?:|s) of homework$/ do |arg1|
   n = arg1.to_i
-  make_homework(n, @current_account)
+  make_homework(n, :owner => @current_account)
+end
+
+When /^(?:|I )create (\d+) pieces of homework due on \"([^\"]*)\"$/ do |arg1, date|
+  n = arg1.to_i
+  make_homework(n, :owner => @current_account, :deadline => date)
 end
 
 When /^(?:|I )create (\d+) piece(?:|s) of homework by \"([^\"]*)\"$/ do |arg1, arg2|
   n = arg1.to_i
   owner = Account.make(:email => arg2)
-  make_homework(n, owner)
+  make_homework(n, :owner => owner)
 end
 
 Then /^(?:|I )should see (\d+) piece(?:|s) of homework$/ do |arg1|
