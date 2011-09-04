@@ -1,7 +1,10 @@
+<div class="homework-head <%= header.how_soon -%>">
 <h3 class="left">
-  <%= link_to_unless_current header.name, homework_path(header), :title => "Click for details" %>
+  <%= header.deadline.to_formatted_s(:short) -%>: <%= link_to_unless_current header.name, homework_path(header), :title => "Click for details" %>
+  
 </h3>
 <div class="ops right">
   <%= link_to "Delete", homework_path(header), :method => :delete%>
 </div>
 <div class="clear"></div>
+</div>
