@@ -1,5 +1,5 @@
 Dueit::Application.routes.draw do
-  resources :homework, :except => %w(show edit update)
+  resources :homework, :except => %w(show edit)
 
   devise_for :accounts
 

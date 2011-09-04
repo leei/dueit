@@ -1,9 +1,16 @@
 <div class="homework-head <%= header.how_soon -%>">
 <h3 class="left">
-  <%= header.deadline.to_formatted_s(:short) -%>: <%= link_to_unless_current header.name, homework_path(header), :title => "Click for details" %>
+  <%= header.deadline.to_date.to_formatted_s(:short) -%>: <%= link_to_unless_current header.name, homework_path(header), :title => "Click for details" %>
   
 </h3>
 <div class="ops right">
+  <% if not header.done? %>
+    <% form_id = "done_#{header.id}" %>
+    <%= link_to_function "Mark Done", "$('##{form_id}').submit()"  %>
+    <%= form_for header, :html => {:id => form_id} do |f| %>
+      <%= f.hidden_field :state, :value => "done" %>
+    <% end %>
+  <% end %>
   <%= link_to "Delete", homework_path(header), :method => :delete%>
 </div>
 <div class="clear"></div>

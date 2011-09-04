@@ -35,3 +35,14 @@ Feature: Manage Homework
     When I follow "Delete" within the first homework
     Then I should be on the home page
      And I should see 1 piece of homework
+
+  @javascript
+  Scenario: I can mark a homework as done
+    Given I am signed in
+      And I have 2 pieces of homework
+    When I go to the home page
+    Then I should see 2 pieces of homework
+    When I follow "Mark Done" within the first homework
+    Then I should be on the home page
+     And I should see 2 pieces of homework
+     And I should see 1 pieces of done homework
