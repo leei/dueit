@@ -20,4 +20,10 @@ class Homework < ActiveRecord::Base
       :not_yet
     end
   end
+
+  #
+  # Any state other than "" or nil is considered done.
+  def done?
+    not state.blank?
+  end
 end
