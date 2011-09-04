@@ -30,3 +30,10 @@ Feature: Home Page
     When I create 5 pieces of homework by "other@gmail.com"
      And I go to the home page
     Then I should see 0 pieces of homework
+
+  Scenario: Each homework should show its due date
+    Given I am signed in
+    When I create 5 pieces of homework due on "sep 10"
+     And go to the home page
+    Then I should see 5 pieces of homework
+     And I should see "10 Sep" within the homework headers
