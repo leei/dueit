@@ -7,7 +7,7 @@ class Homework < ActiveRecord::Base
   validates :deadline, :presence => true
 
   def how_soon
-    soon = deadline - Date.now
+    soon = deadline - DateTime.current
     if soon < 0
       :overdue
     elsif soon < 1.day

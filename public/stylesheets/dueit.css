@@ -74,3 +74,17 @@ body {
 #header .account a {
    text-decoration: none;
 }
+
+/* Simple colors for homework header... */
+div.homework-head.week {
+    background-color: #ffff80;
+}
+div.homework-head.two_days {
+    background-color: #ffff80;
+}
+div.homework-head.tomorrow {
+    background-color: #ffff80;
+}
+div.homework-head.overdue {
+    background-color: #ff6060;
+}
