@@ -1,11 +1,11 @@
 * Add an interface to edit a homework
-* Sort by priority..
-   * Things that haven't been done come first
-   * Sort by ascending due date (soonest first).
 * BUG: Go to a homework's own page
    * Only show criterion on own page...
 * Make criteria editing snazzier...
 
 DONE:
 * Add a way to mark things as done...
+* Sort by priority..
+   * Things that haven't been done come first
+   * Sort by ascending due date (soonest first).
 

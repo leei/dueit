@@ -37,3 +37,17 @@ Feature: Home Page
      And go to the home page
     Then I should see 5 pieces of homework
      And I should see "10 Sep" within the homework headers
+
+  Scenario: Homework should appear soonest due first
+    Given I am signed in
+    When I create 1 piece of homework named "Third" due on "sep 12"
+     And I create 1 piece of homework named "First" due on "sep 10"
+     And go to the home page
+    Then I should see 2 pieces of homework
+     And I should see "First" before "Third"
+    When I create 1 piece of homework named "Second" due on "sep 11"
+     And go to the home page
+    Then I should see 3 pieces of homework
+     And I should see "First" before "Second"
+     And I should see "Second" before "Third"
+     

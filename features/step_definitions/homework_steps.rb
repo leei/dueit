@@ -13,15 +13,24 @@ When /^(?:|I )create (\d+) piece(?:|s) of homework$/ do |arg1|
   make_homework(n, :owner => @current_account)
 end
 
-When /^(?:|I )create (\d+) pieces of homework due on \"([^\"]*)\"$/ do |arg1, date|
+When /^(?:|I )create (\d+) piece(?:|s) of homework (?:|named \"([^\"]*)\" )due on \"([^\"]*)\"$/ do |arg1, name, date|
   n = arg1.to_i
-  make_homework(n, :owner => @current_account, :deadline => date)
+  attrs = {
+    :owner => @current_account, 
+    :deadline => date
+  }
+  attrs[:name] = name unless name.blank?
+  make_homework(n, attrs)
 end
 
 When /^(?:|I )create (\d+) piece(?:|s) of homework by \"([^\"]*)\"$/ do |arg1, arg2|
   n = arg1.to_i
   owner = Account.make(:email => arg2)
   make_homework(n, :owner => owner)
+end
+
+Then /^I should see \"([^\"]*)\" before \"([^\"]*)\"$/ do |arg1, arg2|
+  pending # express the regexp above with the code you wish you had
 end
 
 Then /^(?:|I )should see (\d+) piece(?:|s) of (?:|(.*) )homework$/ do |arg1, state|
