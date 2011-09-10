@@ -44,10 +44,10 @@ Feature: Home Page
      And I create 1 piece of homework named "First" due on "sep 10"
      And go to the home page
     Then I should see 2 pieces of homework
-     And I should see "First" before "Third"
+     And I should see "First" before "Third" within the homework list
     When I create 1 piece of homework named "Second" due on "sep 11"
      And go to the home page
     Then I should see 3 pieces of homework
-     And I should see "First" before "Second"
+     And I should see "First" before "Second" within the homework list
      And I should see "Second" before "Third"
      

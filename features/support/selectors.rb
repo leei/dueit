@@ -33,7 +33,10 @@ module HtmlSelectorsHelpers
       ".homework:first"
 
     when "the list of homework"
-      ".homework"
+      "#homework_list"
+
+    when "the homework list"
+      "#homework_list"
 
     when "the homework headers"
       ".homework-head"

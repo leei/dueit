@@ -30,7 +30,9 @@ When /^(?:|I )create (\d+) piece(?:|s) of homework by \"([^\"]*)\"$/ do |arg1, a
 end
 
 Then /^I should see \"([^\"]*)\" before \"([^\"]*)\"$/ do |arg1, arg2|
-  pending # express the regexp above with the code you wish you had
+  regexp = /#{arg1}.*#{arg2}/m
+  #debugger
+  page.text.should match(regexp)
 end
 
 Then /^(?:|I )should see (\d+) piece(?:|s) of (?:|(.*) )homework$/ do |arg1, state|
@@ -48,3 +50,4 @@ Then /^(?:|I )should see (\d+) piece(?:|s) of (?:|(.*) )homework$/ do |arg1, sta
     end
   end
 end
+
