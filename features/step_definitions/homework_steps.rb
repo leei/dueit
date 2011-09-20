@@ -4,7 +4,7 @@ def make_homework(n, attrs)
   homework.each {|h| h.should be_valid }
 end
 
-Given /^I have (\d+) pieces of homework$/ do |arg1|
+Given /^I have (\d+) piece(?:|s) of homework$/ do |arg1|
   When "I create #{arg1} pieces of homework"
 end
 

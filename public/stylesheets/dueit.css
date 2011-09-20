@@ -96,3 +96,9 @@ body {
 .homework[soon=overdue] .homework-head {
     background-color: #ff6060;
 }
+
+/* Formatting of homework form. */
+
+form.edit_homework table, form.new_homework table {
+	width: 512px;
+}

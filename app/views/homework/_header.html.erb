@@ -7,6 +7,7 @@
   <% if not header.done? %>
     <%= update_homework_state(header, "Mark Done", "done") %>
   <% end %>
+  <%= link_to "Update", edit_homework_path(header) %>
   <%= link_to "Delete", homework_path(header), :method => :delete%>
 </div>
 <div class="clear"></div>

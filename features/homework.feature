@@ -46,3 +46,14 @@ Feature: Manage Homework
     Then I should be on the home page
      And I should see 2 pieces of homework
      And I should see 1 pieces of done homework
+     
+  Scenario: I can edit a homework's name
+     Given I am signed in
+      And I have 1 piece of homework
+     When I follow "Update" within the first homework
+     Then I should be on the edit homework page
+     When I fill in "Name" with "New Name"
+      And I press "Update Homework"
+     Then I should see "New Name" within the first homework
+     
+    

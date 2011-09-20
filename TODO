@@ -1,9 +1,9 @@
-* Add an interface to edit a homework
 * BUG: Go to a homework's own page
    * Only show criterion on own page...
 * Make criteria editing snazzier...
 
 DONE:
+* Add an interface to edit a homework
 * Add a way to mark things as done...
 * Sort by priority..
    * Things that haven't been done come first

@@ -3,7 +3,7 @@ class HomeworkController < ApplicationController
   before_filter :authenticate_account!
 
   # For every action that needs to load a specific Homework, make this a before_filter
-  before_filter :find_id, :only => %w(update destroy)
+  before_filter :find_id, :only => %w(edit update destroy)
 
   def find_id
     # Only access homework from your own account
@@ -34,15 +34,19 @@ class HomeworkController < ApplicationController
     end
   end
 
+  def edit
+  end
+  
   def update
     if @homework.update_attributes(params[:homework])
       # success
       flash.notice = "Homework '#{@homework.name}' updated"
+       redirect_to root_path
     else
       # Failure
       flash.alert = "Failed: #{@homework.errors.full_messages.join(', ')}"
+      render :action => "edit"
     end
-    redirect_to root_path
   end
 
   def destroy
