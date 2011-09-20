@@ -3,7 +3,7 @@ class HomeworkController < ApplicationController
   before_filter :authenticate_account!
 
   # For every action that needs to load a specific Homework, make this a before_filter
-  before_filter :find_id, :only => %w(edit update destroy)
+  before_filter :find_id, :only => %w(show edit update destroy)
 
   def find_id
     # Only access homework from your own account
@@ -17,6 +17,10 @@ class HomeworkController < ApplicationController
   end
 
   public
+  def show
+    
+  end
+  
   def new
     @homework = Homework.new
   end

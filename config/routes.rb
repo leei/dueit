@@ -1,5 +1,5 @@
 Dueit::Application.routes.draw do
-  resources :homework, :except => %w(show)
+  resources :homework
 
   devise_for :accounts
 

@@ -1,6 +1,6 @@
 <div class="homework-head <%= header.how_soon -%>">
 <h3 class="left">
-  <%= header.deadline.to_date.to_formatted_s(:short) -%>: <%= link_to_unless_current header.name, homework_path(header), :title => "Click for details" %>
+  <%= link_to_unless_current "#{header.deadline.to_date.to_formatted_s(:short)}: #{header.name}", homework_path(header), :title => "Click for details" %>
   
 </h3>
 <div class="ops right">

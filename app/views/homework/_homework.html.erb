@@ -2,5 +2,4 @@
 <% attrs[:soon] = homework.how_soon unless homework.done? %>
 <%= content_tag_for :li, homework, attrs do %>
  <%= render :partial => "homework/header", :object => homework %>
- <p><%= homework.criteria %> </p>
 <% end %>
