@@ -50,10 +50,10 @@ Feature: Manage Homework
   Scenario: I can edit a homework's name
      Given I am signed in
       And I have 1 piece of homework
-     When I follow "Update" within the first homework
-     Then I should be on the edit homework page
-     When I fill in "Name" with "New Name"
-      And I press "Update Homework"
-     Then I should see "New Name" within the first homework
+     When I go to the home page
+      And follow "Edit"
+      And fill in "Name" with "New Name"
+      And press "Update Homework"
+     Then I should see "New Name"
      
     

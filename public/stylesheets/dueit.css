@@ -102,3 +102,22 @@ body {
 form.edit_homework table, form.new_homework table {
 	width: 512px;
 }
+
+.ops .ui-button-text {
+	padding: 2px 4px;
+}
+
+.homework:hover {
+	background-color:#E6EFC2;
+}
+
+.homework .ops {
+	display: none;
+}
+.homework:hover .ops {
+	display: block;
+}
+
+li.homework {
+	padding: .4em 1em;
+}
