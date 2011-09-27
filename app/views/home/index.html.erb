@@ -2,8 +2,8 @@
 
 <% if account_signed_in? %>
 <p>
-  To begin, click <%= link_to "Add New Homework", new_homework_path %> to
-  remember some homework.
+  To begin, <%= link_to "Add New Homework", new_homework_path %> to
+  remember some homework or <%= link_to "Create a Class", new_class_path %>.
 </p>
 <div id="homework_list">
   <ul>

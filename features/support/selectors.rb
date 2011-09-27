@@ -40,7 +40,10 @@ module HtmlSelectorsHelpers
 
     when "the homework headers"
       ".homework-head"
-
+  
+    when "the class title"
+      ".class h1"
+      
     # This allows you to provide a quoted selector as the scope
     # for "within" steps as was previously the default for the
     # web steps:

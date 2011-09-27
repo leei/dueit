@@ -26,8 +26,8 @@ class HomeworkController < ApplicationController
   end
 
   def create
-    @homework = Homework.create params[:homework].merge(:owner => current_account)
-    if @homework.valid?
+    @homework = Homework.new params[:homework].merge(:owner => current_account)
+    if @homework.save
       # Success...
       flash.notice = "Homework '#{@homework.name}' created"
       redirect_to root_path

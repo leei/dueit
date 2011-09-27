@@ -1,4 +1,7 @@
 Dueit::Application.routes.draw do
+  resources :classes, :controller => :klasses, :only => %w(show index new create edit update)
+  resources :members, :only => %w(new create destroy)
+  
   resources :homework
 
   devise_for :accounts
