@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110818163625) do
+ActiveRecord::Schema.define(:version => 20110922233039) do
 
   create_table "accounts", :force => true do |t|
     t.string   "email",                                 :default => "", :null => false
@@ -43,5 +43,31 @@ ActiveRecord::Schema.define(:version => 20110818163625) do
 
   add_index "homework", ["deadline"], :name => "index_homeworks_on_deadline"
   add_index "homework", ["owner_id"], :name => "index_homeworks_on_owner_id"
+
+  create_table "klasses", :force => true do |t|
+    t.string   "name"
+    t.string   "school"
+    t.string   "teacher"
+    t.integer  "year"
+    t.string   "term"
+    t.string   "period"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "klasses", ["name"], :name => "index_klasses_on_name"
+  add_index "klasses", ["school"], :name => "index_klasses_on_school"
+  add_index "klasses", ["teacher"], :name => "index_klasses_on_teacher"
+  add_index "klasses", ["year"], :name => "index_klasses_on_year"
+
+  create_table "members", :force => true do |t|
+    t.integer  "klass_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "members", ["klass_id"], :name => "index_members_on_klass_id"
+  add_index "members", ["user_id"], :name => "index_members_on_user_id"
 
 end

@@ -1,0 +1,4 @@
+<%= form_for @klass, :as => :class, :url => classes_path do |f|%>
+<%= render :partial => "form", :object => f %>
+<%= f.submit "Create Class" %>
+<% end %>

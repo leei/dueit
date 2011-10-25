@@ -76,15 +76,48 @@ body {
 }
 
 /* Simple colors for homework header... */
-div.homework-head.week {
+.homework[state=done] .homework-head {
+    background-color: #c0ffc0;
+}
+
+#homework_list ul {
+    list-style-type: none;
+}
+
+.homework[soon=week] .homework-head {
     background-color: #ffff80;
 }
-div.homework-head.two_days {
+.homework[soon=two_days] .homework-head {
     background-color: #ffff80;
 }
-div.homework-head.tomorrow {
+.homework[soon=tomorrow] .homework-head {
     background-color: #ffff80;
 }
-div.homework-head.overdue {
+.homework[soon=overdue] .homework-head {
     background-color: #ff6060;
+}
+
+/* Formatting of homework form. */
+
+form.edit_homework table, form.new_homework table {
+        width: 512px;
+}
+
+.ops .ui-button-text {
+        padding: 2px 4px;
+}
+
+.homework:hover {
+        background-color:#E6EFC2;
+}
+
+.homework .ops {
+        display: none;
+}
+.homework:hover .ops {
+        display: block;
+}
+
+li.homework {
+        padding: .4em 1em;
 }

@@ -4,7 +4,7 @@ def make_homework(n, attrs)
   homework.each {|h| h.should be_valid }
 end
 
-Given /^I have (\d+) pieces of homework$/ do |arg1|
+Given /^I have (\d+) piece(?:|s) of homework$/ do |arg1|
   When "I create #{arg1} pieces of homework"
 end
 
@@ -13,15 +13,26 @@ When /^(?:|I )create (\d+) piece(?:|s) of homework$/ do |arg1|
   make_homework(n, :owner => @current_account)
 end
 
-When /^(?:|I )create (\d+) pieces of homework due on \"([^\"]*)\"$/ do |arg1, date|
+When /^(?:|I )create (\d+) piece(?:|s) of homework (?:|named \"([^\"]*)\" )due on \"([^\"]*)\"$/ do |arg1, name, date|
   n = arg1.to_i
-  make_homework(n, :owner => @current_account, :deadline => date)
+  attrs = {
+    :owner => @current_account,
+    :deadline => date
+  }
+  attrs[:name] = name unless name.blank?
+  make_homework(n, attrs)
 end
 
 When /^(?:|I )create (\d+) piece(?:|s) of homework by \"([^\"]*)\"$/ do |arg1, arg2|
   n = arg1.to_i
   owner = Account.make(:email => arg2)
   make_homework(n, :owner => owner)
+end
+
+Then /^I should see \"([^\"]*)\" before \"([^\"]*)\"$/ do |arg1, arg2|
+  regexp = /#{arg1}.*#{arg2}/m
+  #debugger
+  page.text.should match(regexp)
 end
 
 Then /^(?:|I )should see (\d+) piece(?:|s) of (?:|(.*) )homework$/ do |arg1, state|
@@ -39,3 +50,4 @@ Then /^(?:|I )should see (\d+) piece(?:|s) of (?:|(.*) )homework$/ do |arg1, sta
     end
   end
 end
+
