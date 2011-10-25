@@ -34,7 +34,7 @@ GEM
     arel (2.0.10)
     autotest (4.4.6)
       ZenTest (>= 4.4.1)
-    bcrypt-ruby (3.0.0)
+    bcrypt-ruby (3.0.1)
     builder (2.1.2)
     capybara (1.0.1)
       mime-types (>= 1.16)
@@ -64,7 +64,7 @@ GEM
     delayed_job (2.1.4)
       activesupport (~> 3.0)
       daemons
-    devise (1.4.5)
+    devise (1.4.9)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.0.3)
       warden (~> 1.0.3)
@@ -221,7 +221,7 @@ GEM
       polyglot
       polyglot (>= 0.3.1)
     tzinfo (0.3.30)
-    warden (1.0.5)
+    warden (1.0.6)
       rack (>= 1.0)
     xpath (0.1.4)
       nokogiri (~> 1.3)
